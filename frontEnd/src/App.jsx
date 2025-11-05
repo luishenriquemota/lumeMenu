@@ -1,13 +1,14 @@
 import { useState } from 'react'
-import { HomePage } from './pages/homePage'
+import { LandingPage } from './pages/landingPage'
+import { RoutesApp } from './routes'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-      <HomePage />
+      <RoutesApp />
     </>
   )
 }

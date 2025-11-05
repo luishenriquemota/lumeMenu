@@ -6,7 +6,6 @@ import uuid
 
 class Client(AbstractUser):
    id = models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False)
-   username = models.CharField(max_length=150, unique=False, null=False, blank=False)
    email = models.EmailField(max_length=125, unique=True, null=False, blank=False)
 
 

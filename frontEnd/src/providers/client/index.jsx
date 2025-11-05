@@ -10,7 +10,7 @@ const [clients, setClients] = useState([])
 
 const createClient = (data) => {
     
-    api.post("", data).then(res => {
+    api.post("clients/", data).then(res => {
         toast.success("Usuario cadastrado com sucesso")
     }).catch(err => {
         toast.error("Erro ao cadastrar usuario")

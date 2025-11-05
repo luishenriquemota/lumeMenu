@@ -10,7 +10,7 @@ class ClientSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Client
-        fields = ['username', 'email', 'password']
+        fields = ['username', 'email', 'is_superuser', 'id']
         read_only_fields = ['id', 'date_joined', 'last_login']
         extra_kwargs = {'password': {'write_only': True}}
 
@@ -18,3 +18,15 @@ class ClientSerializer(serializers.ModelSerializer):
         client = Client.objects.create_user(**validated_data)
 
         return client
+    
+    
+    
+class LoginSerializer(serializers.Serializer):
+    email = serializers.CharField(write_only=True)
+    password = serializers.CharField(write_only=True)
+    
+    
+    
+    
+    
+    
