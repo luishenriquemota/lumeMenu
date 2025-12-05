@@ -14,41 +14,36 @@ export const LoginRegisterPageStyled = styled.div`
 
 
 .container{
+    width: 50vw;
+    height: 50vh;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    width: 50%;
-    height: 50%;
-    /* padding: 20px; */
-    /* border-radius: 25px; */
-
-    
-    background-color: #fff;
-
-}
-
-.form-login, .form-register, .content-right, .content-left{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  
+    background-color: #ffffff;
 }
 
 
 .content-right, .content-left{
     width: 50%;
     height: 100%;
-    gap:10px;
     background-color: #a7a7a7ff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
 }
 
 .form-login, .form-register{
-    margin: auto;
-    gap: 20px;
+    width: 50%;
+    height: 100%;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
+
 
 .btn-login:hover{
     cursor: pointer;

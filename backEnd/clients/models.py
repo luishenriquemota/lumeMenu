@@ -9,8 +9,7 @@ class Client(AbstractUser):
    email = models.EmailField(max_length=125, unique=True, null=False, blank=False)
 
 
-   USERNAME_FIELD = 'email'
-   REQUIRED_FIELDS = ['username']
+   REQUIRED_FIELDS = ["email"]
 
 
 

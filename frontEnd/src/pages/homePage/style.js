@@ -111,21 +111,44 @@ gap: 40px;
     flex-direction: column;
     justify-content: space-between;
 
-}
-.card-plate > img{
-   width: 100%;
-   height: 60%;
-   border-radius: 5% 5% 0 0;
-}
+    img{
+        width: 100%;
+        height: 50%;
+        border-radius: 5% 5% 0 0;
+    }
 
-.card-plate > .info-plate{
-    height: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    .info-plate{
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
-    gap: 5px;
-    padding: 5px 15px 5px 15px;
+        gap: 5px;
+        padding: 5px 15px 5px 15px;
+
+
+
+        h3{
+            font-size: 16px;
+        }
+
+        p{
+            font-size: 14px;
+            line-height: 18px;
+        }
+
+        button{
+            min-height: 30px;
+            background-color: #94846bff;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover{
+            background-color: #7c6f5aff;
+            cursor: pointer;
+        }
+
+    }
 }
 
 `

@@ -40,8 +40,10 @@ export const FormRegisterPlate = () => {
                 <form onSubmit={submit}>
                         <InputForm type="text" placeholder="Receita" size={"100%"} {...register("name")}/>
                         <InputForm type="text" placeholder="descrição" size={"100%"} {...register('description')}/>
-                        <InputForm type="number" placeholder="Valor" size={"100%"} {...register('price')}/>
-                        <InputForm type='file' placeholder="Imagem" size={"100%"} {...register("image")}/>
+                        <div>
+                        <InputForm type="number" placeholder="Valor" size={"40%"} {...register('price')}/>
+                        <InputForm type='file' placeholder="Imagem" size={"40%"} {...register("image")}/>
+                        </div>
                     <button type="submit">Cadastrar</button>
                 </form>
             </FormRegisterPlateStyled>

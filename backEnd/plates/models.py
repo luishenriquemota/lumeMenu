@@ -3,7 +3,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 
-class Plates(models.Model):
+class Plate(models.Model):
     id = models.AutoField(primary_key=True, editable=False)
     name = models.CharField(max_length=60, null=False, blank=False, unique=True)
     description = models.CharField(max_length=240, null=True, blank=True)

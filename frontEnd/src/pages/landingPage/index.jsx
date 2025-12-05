@@ -23,16 +23,3 @@ export const LandingPage = () => {
         </LandingPageStyled>
     )
 }
-
-
-
-
-
-
-
-
-
-{/* <LandingPageStyled>
-                <img src={img} alt="imagem de comida" />
-                <FormregisterClient/>
-            </LandingPageStyled>; */}

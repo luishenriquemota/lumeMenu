@@ -4,6 +4,7 @@ import { useModal } from "../../providers/modal"
 import { useplate } from "../../providers/plates"
 import { HomeStyled } from "./style"
 import { Header } from "../../components/header_component"
+import { useCart } from "../../providers/cart"
 
 
 
@@ -11,12 +12,19 @@ export const HomePage = () => {
 
     const {openModal, changeModal} = useModal()
     const {getPlates, plates} = useplate()
+    const {addItemToCart} = useCart()
 
     useEffect(() => {
         getPlates()
     }, [])
 
-    console.log(plates)
+ 
+    const handleBuy = (plate_id) => {
+        addItemToCart(plate_id)
+    }
+
+
+
     return (
         <>
         <Header/>
@@ -74,7 +82,7 @@ export const HomePage = () => {
                         <h3>{item.name}</h3>
                         <p>{item.description}</p>
                         <span>Preço: R$ {item.price}</span>
-                        <button>Comprar</button>
+                        <button onClick={(e) => handleBuy(item.id)}>Comprar</button>
                     </div>
                 </div>
                 ))}  

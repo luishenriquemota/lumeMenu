@@ -33,9 +33,14 @@ color: #5b6886ff;
 }
 
 
+.btn-header{
+  display: flex;
+  gap: 20px;
+}
+
 button{
 width: 80px;
-height: 30px;
+height: 40px;
 border-radius: 5px;
 background-color: transparent;
 color: white;

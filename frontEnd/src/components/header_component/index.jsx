@@ -31,15 +31,18 @@ export const Header = () => {
 
     return (
       <HeaderStyled>
-        <img src={logo} alt="logo" />
+        <img onClick={() => {navigate("/home")}} src={logo} alt="logo" />
         <nav>
             <span>Home</span>
             <span>Menu</span>
             <span>Sobre</span>
             <span>contato</span>
         </nav>
-        {currentPath === "/home" ? (
-          <button onClick={(e) => handleclickcreatePlate()}>Criar prato</button>
+        {currentPath === "/home" || currentPath === "/cart" ? (
+          <div className="btn-header">
+            <button onClick={(e) => handleclickcreatePlate()}>Criar prato</button>
+            <button onClick={() => {navigate("/cart")}}>Meu Carrinho</button>
+          </div>
         ): <button onClick={(e) => handleclickLogin()}>login</button>}
       </HeaderStyled>
     )

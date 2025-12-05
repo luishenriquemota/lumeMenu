@@ -1,6 +1,7 @@
 from rest_framework.generics import ListCreateAPIView
 from rest_framework.authtoken.models import Token
 from rest_framework.views import APIView, Request, Response, status
+from carts.models import Cart
 from .models import Client
 from .serializers import ClientSerializer, LoginSerializer
 from django.contrib.auth import authenticate
@@ -13,9 +14,15 @@ class ClientView(SerializarByMethodMixin, ListCreateAPIView):
         "POST": ClientSerializer
         
     }
+    
+    def perform_create(self, serializer):
+        client = serializer.save()
+        cart = Cart.objects.create(client=client)
+        cart.save()
+        
 
 
-class loginView(APIView):
+class LoginView(APIView):
     queryset = Token.objects.all()
     serializer_class  = LoginSerializer
     
@@ -24,17 +31,16 @@ class loginView(APIView):
         serialized_login.is_valid(raise_exception=True)
 
         client = authenticate(
-            email = serialized_login._validated_data["email"],
-            password = serialized_login.validated_data["password"]
+            username = serialized_login.validated_data['username'],
+            password = serialized_login.validated_data['password'],
         )
         
         if not client:
             return Response({"detail": "invalid email or password"}, status=status.HTTP_400_BAD_REQUEST)
+        
+
     
-        token, _ = Token.objects.get_or_create(client=client)
+        token, _ = Token.objects.get_or_create(user=client)
         
         return Response({"token": token.key})
     
- 
-# class ClientDetailView():
-#     ...
